@@ -1,0 +1,55 @@
+﻿@using RepositoryCRUDOperations.Models
+@model IEnumerable<Product>
+
+@{
+   ViewData["Title"] = "Product List";
+}
+
+<div class="container mt-5">
+        <h2>@ViewData["Title"]</h2>
+    <div class="col end-0">
+            <a asp-action="Create" class="btn btn-primary">Create New Product</a>
+    </div>
+    <div class="shadow p-3 mb-5 bg-white rounded">
+         <table class="table table-striped table-hover table-responsive">
+            <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Product Name</th>
+                            <th>Product Pricw</th>
+                            <th>Quantity</th>
+                            <th>Action</th>
+                        </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var prod in Model)
+                    {
+                        <tr>
+                            <td>@prod.Id</td>
+                            <td>@prod.ProductName</td>
+                            <td>@prod.Price</td>
+                            <td>@prod.Quantity</td>
+                            <td>
+                                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@prod.Id">Edit</a>
+                                <a asp-action="Details" class="btn btn-info" asp-route-id="@prod.Id">Details</a>
+                                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@prod.Id">Delete</a>
+                            </td>
+                        </tr>    
+
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">
+                            No product available
+                        </td>
+                    </tr>    
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

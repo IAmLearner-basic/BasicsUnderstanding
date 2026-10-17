@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/BasicsUnderstanding.slnx/FileContentIndex/c1ac029b-2ed4-4a1f-ba47-22484e00581c.vsidx
+/CRUDWithRepository/.vs
+/.vs
+/CRUDWithRepository/obj
+/RepositoryCRUDOperations/.vs
+/RepositoryCRUDOperations/bin/Debug/net10.0
+/RepositoryCRUDOperations/obj
